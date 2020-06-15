@@ -1,0 +1,19 @@
+{
+  "name": "x-dispatcher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint  --ext .js libs",
+    "lint:fix": "./node_modules/.bin/eslint --fix --ext .js libs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "CC BY-SA",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.2.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-standard": "^4.0.1"
+  }
+}

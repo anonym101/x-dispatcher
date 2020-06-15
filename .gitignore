@@ -1,0 +1,14 @@
+node_modules
+npm-debug.log
+desktop.ini
+info.md
+temp
+logcommits.md
+*.env
+*.dev
+.DS_Store
+_bin
+# Docker
+Dockerfile
+
+docker-compose.yml
