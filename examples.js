@@ -1,6 +1,12 @@
+`use strict`
 
 
-// exampleOne()
+/**
+ * x-dispatcher 
+ * - three examples showcase
+ */
+
+
 function exampleOne() {
     const uid = `dispatch_job_1`
     const DEBUG = true
