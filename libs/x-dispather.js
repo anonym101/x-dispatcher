@@ -18,7 +18,7 @@ module.exports = function (_uid, _debug = null) {
         this.dispatchInstance = {}
         this._isActive = null
         this.index = 0 // count callbacks
-
+        this.data = null // dynamic next data becomes available when subscribe event is received
         // shorthand aliases
         /** 
         * @alias initListener
@@ -103,7 +103,8 @@ module.exports = function (_uid, _debug = null) {
                             // collect cb from .next
                             if (!self.cbQueue[self.uid]) self.cbQueue[self.uid] = data.cb
                             if (this.data) {
-                                self.index++ 
+                                self.index++
+                                self.data = this.data
                                 data.cb.call(self, this.data, self.uid, self.index)
                              
                             }
@@ -115,6 +116,7 @@ module.exports = function (_uid, _debug = null) {
                     if (this.data) {
                         if (typeof self.cbQueue[self.uid] === 'function') {
                             self.index++ 
+                            self.data = this.data
                             self.cbQueue[self.uid].call(self, this.data, self.uid, self.index)
                            
                         }

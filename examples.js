@@ -6,18 +6,20 @@ function exampleOne() {
     const DEBUG = true
     const { dispatcher } = require('./index')
     const ds = dispatcher(uid,  DEBUG)
+
     // thanks to callback memory `next` can be called before being subscribed!
     ds.next({ type: 'profile', data: { address: 'xox', email: 'johndoe@email.xo', name: 'John Doe', company: 'Anonymous' } })
+
     ds.subscribe((data, uid, index) => {
         console.log('on subscribe', data, uid, index)
-    })// .next({ data: { company: "Secret" } })
+    })
 
     ds.next({ data: { company: "Secret" } })
               .next({ data: { company: "another Secret" } }) // and so on
 }
 
 
-exampleTwo()
+// exampleTwo()
 function exampleTwo() {
     const uid = `dispatch_job_2`
     const DEBUG = true
@@ -29,18 +31,33 @@ function exampleTwo() {
     
     console.log('isActive? 1', ds.isActive()) // active
 
-    ds.subscribe(function(data, uid, index) {
-        
+    ds.subscribe(function(data, uid, index) {      
         console.log('on subscribe', data, uid, index)
-
-    this.unsubscribe() // `dispatcher.unsubscribe()` will remove dispatch listener from future events 
-    })// .next({ data: { company: "Secret" } })
+        this.unsubscribe() // `dispatcher.unsubscribe()` will remove dispatch listener from future events 
+    })
     
     // never called
     ds.next({ data: { company: "Secret" } })
 
-
     console.log('isActive? 2', ds.isActive()) // not active
+}
 
+
+
+
+exampleThree()
+function exampleThree() {
+
+    const { dispatcher } = require('./index')
+    const ds = dispatcher()
     
+    console.log('dispatcher/active ? 1', ds.isActive()) // null not yet set
+
+    ds.subscribe(function() {    
+        console.log('on subscribe', this.uid, this.data, this.index)
+    })
+    .next({ data: { company: "Secret" } })
+    .next({ data: { company: "any more secrets?" } })
+
+    console.log('dispatcher/active ? 2', ds.isActive()) // not active
 }
