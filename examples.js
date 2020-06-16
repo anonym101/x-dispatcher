@@ -64,6 +64,8 @@ function exampleThree() {
     })
     .next({ data: { company: "Secret" } })
     .next({ data: { company: "any more secrets?" } })
+    .unsubscribe()
+    .next({ data: { company: "did you receive it" } }) // never received
 
     console.log('dispatcher/active ? 2', ds.isActive()) // not active
 }
