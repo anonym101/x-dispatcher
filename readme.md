@@ -10,12 +10,18 @@
 - Lightweight Event Dispatcher, allow you to dispatch data from callback hell, or any other complicated computations, integrated callback memory support - when not subscribed. Code validated with lint, Chaining support
 - Available on `Node.js` and `Browser`
 
+#### Why use it ?
+- Avoid ugly callback > callback > callback hell!
+- Avoid messy Promises
+- Prefer clean, readable code hierarchy
+- Easy to implement and use
+
 
 #### Installation:
 - If you want to use `npm run lint` then you have to run:`npm i`, otherwise there are no other dependencies to worry about!
 
 #### Examples:
-- examples are available in `./examples.js`
+- examples are available in `node ./examples.js`
 
 ### Methods:
 - `subscribe((data,uid,index)=>)`: start listening for events, before or after `next()`

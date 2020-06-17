@@ -4,13 +4,14 @@
 /**
  * x-dispatcher 
  * - three examples showcase
+ * - just uncomment the example you want to see
  */
 
-
+// exampleOne()
 function exampleOne() {
     const uid = `dispatch_job_1`
     const DEBUG = true
-    const { dispatcher } = require('./index')
+    const { dispatcher } = require('./index') // destructuring 
     const ds = dispatcher(uid,  DEBUG)
 
     // thanks to callback memory `next` can be called before being subscribed!
@@ -20,8 +21,11 @@ function exampleOne() {
         console.log('on subscribe', data, uid, index)
     })
 
-    ds.next({ data: { company: "Secret" } })
-              .next({ data: { company: "another Secret" } }) // and so on
+    setTimeout(() => {
+        ds.next({ data: { company: "Secret delayed" } })
+            .next({ data: { company: "another Secret delayed" } }) // and so on
+    }, 2000)
+    
 }
 
 
@@ -29,7 +33,7 @@ function exampleOne() {
 function exampleTwo() {
     const uid = `dispatch_job_2`
     const DEBUG = true
-    const { dispatcher } = require('./index')
+    const { dispatcher } = require('./index') // destructuring 
     const ds = dispatcher(uid,  DEBUG)
     
     // thanks to callback memory `next` can be called before being subscribed!
@@ -49,12 +53,10 @@ function exampleTwo() {
 }
 
 
-
-
-exampleThree()
+// exampleThree()
 function exampleThree() {
 
-    const { dispatcher } = require('./index')
+    const { dispatcher } = require('./index') // destructuring 
     const ds = dispatcher()
     
     console.log('dispatcher/active ? 1', ds.isActive()) // null not yet set
