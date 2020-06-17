@@ -15,7 +15,8 @@
 - Avoid messy Promises
 - Prefer clean, readable code hierarchy
 - Easy to implement and use
-
+- No dependencies
+- Ready to use in Browser. `./libs/x-dispatcher.min.js`
 
 #### Installation:
 - If you want to use `npm run lint` then you have to run:`npm i`, otherwise there are no other dependencies to worry about!
