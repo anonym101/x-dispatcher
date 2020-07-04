@@ -5,6 +5,7 @@
  * * Lightweight Event Dispatcher
  * * Self invoked class
  * * Developed by Anon
+ * * license: CC-BY-SA-4.0
  */
 
 // esModule

@@ -1,5 +1,5 @@
 ### About
-**Lightweight Event Dispatcher** _(umd support)_, allowing you to dispatch anywhere in your code, very handy in callback hell situations, deep promises, or any other complicated computations. Integrated with callback memory - so you dont have to subscribe first in order to get your data.
+**Lightweight Event Dispatcher** _(umd support)_, allowing you dispatch anywhere in the code, very handy in callback hell situations, deep promises, or any other complicated computations. Integrated with callback memory - so you dont have to subscribe first to get your data.
 
 
 
@@ -15,7 +15,7 @@
 - Prefer clean, readable code hierarchy
 - Easy to implement
 - No dependencies
-- UMD support so you can use same declaration in most environments: *(AMD, Node, or browser)*
+- UMD/esm support so you can use same declaration in most environments: *(AMD, Node, or browser)*
 
 
 ### Example
@@ -27,7 +27,8 @@
     const DEBUG = true
   
     const ds = xdispatcher(uid, DEBUG)
-    // thanks to callback memory `next` can be called before subscribed!
+
+    // thanks to callback memory `next` can be called before subscribe!
     ds.next({ type: 'profile', data: { address: 'xox', email: 'johndoe@email.xo', name: 'John Doe', company: 'Anonymous' } })
 
     .subscribe(function(data, uid, index){
@@ -39,7 +40,7 @@
         ds.next({ data: { company: "Secret delayed" } })
           .next({ data: { company: "another Secret delayed" } }) // and so on
           .unsubscribe()
-          .next({ data: { company: "never received" } }) 
+          .next({ data: { company: "never received" } }) // never called
     }, 2000)
 
     console.log(ds.isActive()) //:false
@@ -57,10 +58,10 @@
 
 |METHODS                |RETURN                          |DESCRIPTION                         |
 |----------------|-------------------------------|-----------------------------|
-|**subscribe((data,uid,index)=>)** | `self` |start listening for events, before or after `next().` |
-|**next(data)/emit(data)** | `self` |sends data to `subscribe` callback. Can be declared before `subscribe` was initialized, there are no timers, so do not worry about memory leaks!  |
+|**subscribe((data,uid,index)=>)** | `self` |start listening for events, before or after `next()` |
+|**next(data)/emit(data)** | `self` |send data to `subscribe` callback. Can be declared before `subscribe` was initialized, there are no timers, so do not worry about memory leaks!  |
 |**del()/delete()/unsubscribe()** | `self` |remove dispatcher from stack |
-|**isActive()** | `boolean` |tel you if dispatcher is still active, in case you set to delete it somewhere! |
+|**isActive()** | `boolean` |tells you if dispatcher is still active |
 
 
 
@@ -73,7 +74,9 @@
 
 ### Version support
 - es5/es6 support for universal module, can use for: `AMD, Node, or browser`
+
 ```js
+
 const { xdispatcher } = require('x-dispatcher') // defaults to node
 const { xdispatcher } = require('x-dispatcher/umd') 
 const { xdispatcher } = require('x-dispatcher/node') // umd/es6 
@@ -82,6 +85,7 @@ import { xdispatcher } from 'x-dispatcher/esm'
 <script src="..path/x-dispatcher/umd">
    const xd = window.xdispatcher() 
 </script>
+
 ```
 
 
