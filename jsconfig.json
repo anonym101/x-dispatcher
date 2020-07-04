@@ -1,11 +1,9 @@
 {
   "compileOnSave": false,
-  "resolution":"",
-  "typeRoots": ["./types/index.d.ts" ],
   "compilerOptions": {
     "checkJs":true,
     "moduleResolution": "node",
-    "module": "commonJS",
+    "module": "es2015",
     "target": "es6",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -15,6 +13,9 @@
   "paths": {
     "*": ["node_modules/*", "types/*"]
   },
-  "include": ["libs"],
-  "exclude": ["node_modules", "tmp"]
+  "lib": [
+    "dom"
+  ],
+  "include": ["src"],
+  "exclude": ["node_modules", "node","umd"]
 }

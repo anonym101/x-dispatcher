@@ -1,0 +1,27 @@
+{
+    "comments": false,
+    "presets": [
+        "@babel/preset-react",
+        [
+            "minify",
+            {
+                "simplifyComparisons": false, // not a good idea
+                "keepFnName": true,
+                "mangle": false, // keep original method prop names for clarity
+                "deadcode": true
+            }
+        ]
+    ],
+    "plugins": [
+        [
+            "@babel/plugin-transform-runtime",
+            {
+                "absoluteRuntime": false,
+                "corejs": 2,
+                "helpers": true,
+                "regenerator": true,
+                "useESModules": true
+            }
+        ]
+    ]
+}

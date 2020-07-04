@@ -1,0 +1,14 @@
+{
+    "comments": false,
+    "presets": [
+        [
+            "minify",
+            {
+                "simplifyComparisons": false, // not a good idea
+                "keepFnName": true,
+                "mangle": false, // keep original method prop names for clarity
+                "deadcode": true
+            }
+        ]
+    ]
+}

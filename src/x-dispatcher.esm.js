@@ -1,15 +1,14 @@
+// @ts-nocheck
 
 /**
- * @Xdispatcher
- * Lightweight Event Dispatcher
- * - self invoked class
- * - examples on usage available in `./examples.js` or `readme.md`
- * 
- *  Developerd by eaglex.net
- *  LICENCE: CC BY-SA
- *  SOURCE: https://creativecommons.org/licenses/by-sa/4.0/
+ * @xdispatcher
+ * * Lightweight Event Dispatcher
+ * * Self invoked class
+ * * Developed by Anon
  */
-module.exports = function (_uid, _debug = null) {
+
+// esModule
+export function xdispatcher(_uid, _debug = null) {
     return (new function (uid, debug) {
         const plugin = `[dispatcher]`
         this.uid = ((uid || '').toString() || new Date().getTime()).toString() // id generated if not provided
@@ -26,7 +25,6 @@ module.exports = function (_uid, _debug = null) {
         this.init = () => {
             return this.initListener()
         }
-
         /** 
         * @alias next
         */
@@ -106,7 +104,7 @@ module.exports = function (_uid, _debug = null) {
                                 self.index++
                                 self.data = this.data
                                 data.cb.call(self, this.data, self.uid, self.index)
-                             
+
                             }
                         }
 
@@ -115,10 +113,10 @@ module.exports = function (_uid, _debug = null) {
 
                     if (this.data) {
                         if (typeof self.cbQueue[self.uid] === 'function') {
-                            self.index++ 
+                            self.index++
                             self.data = this.data
                             self.cbQueue[self.uid].call(self, this.data, self.uid, self.index)
-                           
+
                         }
                     } else {
                         if (self.debug) console.log(`${plugin} no callback data`)
@@ -140,7 +138,7 @@ module.exports = function (_uid, _debug = null) {
 
         /** 
          * @del
-         * delete all accurance for dispatcher
+         * delete dispatcher
         */
         this.del = () => {
             delete this.cbQueue[this.uid]

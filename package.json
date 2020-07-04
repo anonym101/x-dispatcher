@@ -1,19 +1,55 @@
 {
   "name": "x-dispatcher",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "JavaScript event dispatcher",
+  "main": "./node/index.js",
+  "browser": "./umd/index.js",
+  "module": "./esm/index.js",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint  --ext .js libs",
-    "lint:fix": "./node_modules/.bin/eslint --fix --ext .js libs",
+    "build:esm": "babel --config-file ./esm/.babelrc ./src/x-dispatcher.esm.js --out-file ./esm/index.js",
+    "build:umd": "babel --config-file ./umd/.babelrc ./src/x-dispatcher.js --out-file ./umd/index.js",
+    "build:node": "babel --config-file ./node/.babelrc ./src/x-dispatcher.js --out-file ./node/index.js",
+    "build:all": "npm run lint:fix&& npm run build:umd&& npm run build:esm&& npm run build:node",
+    "lint": "./node_modules/.bin/eslint  --ext .js src",
+    "lint:fix": "./node_modules/.bin/eslint --fix --ext .js src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "CC BY-SA",
+  "author": "anon",
+  "license": "CC-BY-SA-4.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anonym101/x-dispatcher"
+  },
+  "homepage": "https://eaglex.net",
+  "engines": {
+    "node": "*",
+    "npm": "*"
+  },
+  "contributors": [],
+  "keywords": [
+    "umd support",
+    "esm support",
+    "dispatch event",
+    "event target",
+    "request event",
+    "callback hell",
+    "custom events",
+    "code hierarchy",
+    "clean code"
+  ],
   "devDependencies": {
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.2.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-preset-minify": "^0.5.1",
+    "eslint": "^7.4.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-standard": "^4.0.1"
+    "eslint-plugin-standard": "^4.0.1",
+    "esm": "^3.2.25"
   }
 }
