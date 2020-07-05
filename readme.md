@@ -1,12 +1,13 @@
 
-> **Lightweight Event Dispatcher** _(umd support)_, allowing you dispatch anywhere in the code, very handy in callback hell situations, deep promises, or any other complicated computations. Integrated with callback memory  _(so you dont have to subscribe first to get your data.)_
-
-
+**Lightweight Event Dispatcher** _(umd support)_, allowing you dispatch anywhere in the code, very handy in callback hell situations, deep promises, or any other complicated computations. Integrated with callback memory  _(so you dont have to subscribe first to get your data.)_
+&nbsp;
+&nbsp;
 
 ### Install:
 ```shell
 /$ npm i x-dispatcher
 ```
+&nbsp;
 
 
 ### Why use it ?
@@ -16,6 +17,7 @@
 * Easy to implement
 * No dependencies
 * UMD/esm support so you can use same declaration in most environments: *(AMD, Node, or browser)*
+&nbsp;
 
 
 ### Example
@@ -49,6 +51,7 @@
 
 ### More Examples
 Checkout  `./examples.js`
+&nbsp;
 
 
 
@@ -60,12 +63,14 @@ Checkout  `./examples.js`
 |next( data )/emit( data ) | `self` |send data to `subscribe` callback. Can be declared before `subscribe` was initialized, there are no timers, so do not worry about memory leaks!  |
 |del()/delete()/unsubscribe() | `self` |remove dispatcher from stack |
 |isActive() | `boolean` |tells you if dispatcher is still active |
+&nbsp;
 
 
 
 
 ### Stack
 es5/es6, Javascript, lint, callback, chaining support, umd, commonjs, node.js
+&nbsp;
 
 
 
@@ -83,6 +88,7 @@ import { xdispatcher } from 'x-dispatcher/esm'
    const xd = window.xdispatcher() // initialize new
 </script>
 ```
+&nbsp;
 
 
 
