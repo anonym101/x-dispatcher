@@ -20,7 +20,7 @@
     "type": "git",
     "url": "https://github.com/anonym101/x-dispatcher"
   },
-  "homepage": "https://eaglex.net",
+  "homepage": "https://github.com/anonym101/x-dispatcher#readme",
   "engines": {
     "node": "*",
     "npm": "*"
