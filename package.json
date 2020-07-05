@@ -16,11 +16,12 @@
   },
   "author": "anon",
   "license": "CC-BY-SA-4.0",
+  "url" : "https://eaglex.net",
   "repository": {
     "type": "git",
     "url": "https://github.com/anonym101/x-dispatcher"
   },
-  "homepage": "https://eaglex.net",
+  "homepage": "https://github.com/anonym101/x-dispatcher#readme",
   "engines": {
     "node": "*",
     "npm": "*"
@@ -40,20 +41,5 @@
     "clean code",
     "x-dispatcher",
     "anon"
-  ],
-  "devDependencies": {
-    "@babel/cli": "^7.10.4",
-    "@babel/core": "^7.10.4",
-    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
-    "@babel/plugin-transform-runtime": "^7.10.4",
-    "@babel/preset-env": "^7.10.4",
-    "@babel/preset-react": "^7.10.4",
-    "babel-eslint": "^10.1.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
-    "babel-preset-minify": "^0.5.1",
-    "eslint": "^7.4.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-standard": "^4.0.1",
-    "esm": "^3.2.25"
-  }
+  ]
 }
