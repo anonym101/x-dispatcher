@@ -100,6 +100,6 @@ es5/es6, Javascript, lint, callback, chaining support, umd, commonjs, node.js
 
 
 ### Contact
-Have questions, or would like to submit feedback, `contact on: https://eaglex.net/app/contact?product=x-dispatcher`
+Have questions, or would like to submit feedback, [contact eaglex](https://eaglex.net/app/contact?product=x-dispatcher)
 
 
