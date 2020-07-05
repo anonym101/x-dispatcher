@@ -12,3 +12,4 @@ _bin
 Dockerfile
 libs
 docker-compose.yml
+.vscode
