@@ -28,14 +28,18 @@
   "contributors": [],
   "keywords": [
     "umd support",
+    "browser support",
     "esm support",
     "dispatch event",
+    "subscribe event",
     "event target",
     "request event",
     "callback hell",
     "custom events",
     "code hierarchy",
-    "clean code"
+    "clean code",
+    "x-dispatcher",
+    "anon"
   ],
   "devDependencies": {
     "@babel/cli": "^7.10.4",
