@@ -99,6 +99,6 @@ import { xdispatcher } from 'x-dispatcher/esm'
 
 
 ### Contact
-* Have questions, or would like to submit feedback, `contact on: https://eaglex.net/app/contact?product=x-dispatcher`
+Have questions, or would like to submit feedback, `contact on: https://eaglex.net/app/contact?product=x-dispatcher`
 
 
