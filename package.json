@@ -28,28 +28,17 @@
   "contributors": [],
   "keywords": [
     "umd support",
+    "browser support",
     "esm support",
     "dispatch event",
+    "subscribe event",
     "event target",
     "request event",
     "callback hell",
     "custom events",
     "code hierarchy",
-    "clean code"
-  ],
-  "devDependencies": {
-    "@babel/cli": "^7.10.4",
-    "@babel/core": "^7.10.4",
-    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
-    "@babel/plugin-transform-runtime": "^7.10.4",
-    "@babel/preset-env": "^7.10.4",
-    "@babel/preset-react": "^7.10.4",
-    "babel-eslint": "^10.1.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
-    "babel-preset-minify": "^0.5.1",
-    "eslint": "^7.4.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-standard": "^4.0.1",
-    "esm": "^3.2.25"
-  }
+    "clean code",
+    "x-dispatcher",
+    "anon"
+  ]
 }
