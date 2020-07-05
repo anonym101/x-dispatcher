@@ -1,5 +1,5 @@
 
-> **Lightweight Event Dispatcher** _(umd support)_, allowing you dispatch anywhere in the code, very handy in callback hell situations, deep promises, or any other complicated computations. Integrated with callback memory  _(so you dont have to subscribe first to get your data.)_
+**Lightweight Event Dispatcher** _(umd support)_, allowing you dispatch anywhere in the code, very handy in callback hell situations, deep promises, or any other complicated computations. Integrated with callback memory  _(so you dont have to subscribe first to get your data.)_
 &nbsp;
 &nbsp;
 
