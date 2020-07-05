@@ -58,6 +58,25 @@ Checkout  `./examples.js`
 
 
 
+### Version support
+es5/es6 support for universal module, can use for: `AMD, Node, or browser`
+
+```js
+const { xdispatcher } = require('x-dispatcher') // defaults to node
+const { xdispatcher } = require('x-dispatcher/umd') 
+const { xdispatcher } = require('x-dispatcher/node') // umd/es6 
+import { xdispatcher } from 'x-dispatcher/esm' 
+
+<script src="..path/x-dispatcher/umd">
+   const xd = window.xdispatcher() // initialize new
+</script>
+```
+&nbsp;
+&nbsp;
+
+
+
+
 ### Methods
 
 |METHODS                |RETURN                          |DESCRIPTION                         |
@@ -80,25 +99,7 @@ es5/es6, Javascript, lint, callback, chaining support, umd, commonjs, node.js
 
 
 
-### Version support
-es5/es6 support for universal module, can use for: `AMD, Node, or browser`
-
-```js
-const { xdispatcher } = require('x-dispatcher') // defaults to node
-const { xdispatcher } = require('x-dispatcher/umd') 
-const { xdispatcher } = require('x-dispatcher/node') // umd/es6 
-import { xdispatcher } from 'x-dispatcher/esm' 
-
-<script src="..path/x-dispatcher/umd">
-   const xd = window.xdispatcher() // initialize new
-</script>
-```
-&nbsp;
-&nbsp;
-
-
-
 ### Contact
-* Have questions, or would like to submit feedback, `contact on: https://eaglex.net/app/contact?product=x-dispatcher`
+Have questions, or would like to submit feedback, `contact on: https://eaglex.net/app/contact?product=x-dispatcher`
 
 
