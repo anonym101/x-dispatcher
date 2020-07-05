@@ -8,6 +8,7 @@
 /$ npm i x-dispatcher
 ```
 &nbsp;
+&nbsp;
 
 
 ### Why use it ?
@@ -17,6 +18,7 @@
 * Easy to implement
 * No dependencies
 * UMD/esm support so you can use same declaration in most environments: *(AMD, Node, or browser)*
+&nbsp;
 &nbsp;
 
 
@@ -52,6 +54,7 @@
 ### More Examples
 Checkout  `./examples.js`
 &nbsp;
+&nbsp;
 
 
 
@@ -64,12 +67,14 @@ Checkout  `./examples.js`
 |del()/delete()/unsubscribe() | `self` |remove dispatcher from stack |
 |isActive() | `boolean` |tells you if dispatcher is still active |
 &nbsp;
+&nbsp;
 
 
 
 
 ### Stack
 es5/es6, Javascript, lint, callback, chaining support, umd, commonjs, node.js
+&nbsp;
 &nbsp;
 
 
@@ -88,6 +93,7 @@ import { xdispatcher } from 'x-dispatcher/esm'
    const xd = window.xdispatcher() // initialize new
 </script>
 ```
+&nbsp;
 &nbsp;
 
 
