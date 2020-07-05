@@ -1,10 +1,9 @@
 {
   "name": "x-dispatcher",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JavaScript event dispatcher",
-  "main": "./node/index.js",
-  "browser": "./umd/index.js",
-  "module": "./esm/index.js",
+  "main": "node/index.js",
+  "module": "esm/index.js",
   "scripts": {
     "build:esm": "babel --config-file ./esm/.babelrc ./src/x-dispatcher.esm.js --out-file ./esm/index.js",
     "build:umd": "babel --config-file ./umd/.babelrc ./src/x-dispatcher.js --out-file ./umd/index.js",
