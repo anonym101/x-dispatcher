@@ -20,11 +20,17 @@ function exampleOne() {
     ds.subscribe((data, uid, index) => {
         console.log('on subscribe', data, uid, index)
     })
+    // can optionally be used
+    .onComplete(uid=>{
+        console.log(`have unsubscribed from ${uid}`)
+    })
 
     setTimeout(() => {
         ds.next({ data: { company: "Secret delayed" } })
             .next({ data: { company: "another Secret delayed" } }) // and so on
+            .unsubscribe()
     }, 2000)
+
 
 }
 

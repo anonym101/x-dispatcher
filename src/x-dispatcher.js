@@ -17,6 +17,7 @@ function xdispatcher(_uid, _debug = null) {
         this.cbQueue = {}
         this.dispatchInstance = {}
         this._isActive = null
+        this._onComplete_cb = null
         this.index = 0 // count callbacks
         this.data = null // dynamic next data becomes available when subscribe event is received
         // shorthand aliases
@@ -54,6 +55,15 @@ function xdispatcher(_uid, _debug = null) {
             return this.subscribe(cb)
         }
         // end
+
+        /** 
+         * @onComplete
+         * when subscribe event is deleted complete even callback can be called
+        */
+        this.onComplete = (cb) => {
+            this._onComplete_cb = cb
+            return this
+        }
 
         /** 
          * @Dispatch
@@ -145,6 +155,7 @@ function xdispatcher(_uid, _debug = null) {
             delete this.cbQueue[this.uid]
             delete this.dispatchInstance[this.uid]
             this._isActive = false
+            if (typeof this._onComplete_cb === 'function') this._onComplete_cb(this.uid)
             return this
         }
 

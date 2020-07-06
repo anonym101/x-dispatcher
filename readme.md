@@ -26,8 +26,8 @@
 ```js
     // import { xdispatcher } from 'x-dispatcher/esm' when using esm or ts
     const { xdispatcher } = require('x-dispatcher') // /node or /umd can also be used 
-    const uid = `dispatch_job_1`
-    const DEBUG = true
+    const uid = `dispatch_job_1` // optional
+    const DEBUG = true // optional
   
     const ds = xdispatcher(uid, DEBUG)
 
@@ -37,6 +37,9 @@
     .subscribe(function(data, uid, index){
         console.log('on subscribe', data, this.uid, index)
         // this.unsubscribe() 
+    })
+    .onComplete(uid=>{
+        console.log(`unsubscribed from ${uid}`)
     })
 
     setTimeout(() => {
@@ -81,7 +84,8 @@ import { xdispatcher } from 'x-dispatcher/esm'
 
 |METHODS                |RETURN                          |DESCRIPTION                         |
 |----------------|-------------------------------|-----------------------------|
-|subscribe( (data,uid,index)=> ) | `self` |start listening for events, before or after `next()` |
+|subscribe( (data,uid,index)=> ) | `self` |start listening for events, before or after `next()`. `uid`=> default of provided id for this dispatcher. `index`=> counts callback events. |
+|onComplete( (uid)=> ) | `self` |when subscribe event is deleted, callback is initiated |
 |next( data )/emit( data ) | `self` |send data to `subscribe` callback. Can be declared before `subscribe` was initialized, there are no timers, so do not worry about memory leaks!  |
 |del()/delete()/unsubscribe() | `self` |remove dispatcher from stack |
 |isActive() | `boolean` |tells you if dispatcher is still active |
