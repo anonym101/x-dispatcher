@@ -185,30 +185,28 @@ function xdispatcher(_uid, _debug = null) {
 
 // UMD Universal module loader
 (function (root, factory) {
+    "use strict"
     // keep consistency throughout
     // NOTE moduleName = xdispatcher
+
     if (typeof define === 'function' && define.amd) { // eslint-disable-line no-undef
-        // AMD. Register as an anonymous module.
-        define(['dep'], function (dep) { // eslint-disable-line no-undef
-            // Also create a global in case some scripts
-            // that are loaded still are looking for
-            // a global even when an AMD loader is in use.
-            root = root || self || window // eslint-disable-line no-undef
-            return (root.xdispatcher = factory(dep)) // eslint-disable-line no-undef
-        })
-    } else if (typeof exports === 'object') {
-        // Node. Does not work with strict CommonJS, but
-        // only CommonJS-like enviroments that support module.exports,
-        // like Node.
-        // const dep =  require('b')
-        exports.xdispatcher = factory(/** dep */)
-    } else {
-        // Browser globals (root is window)
-        // const dep = root.b
+        // AMD. Register as an anonymous module. 
+        define(factory) // eslint-disable-line no-undef
+    } else if (typeof exports === 'object') factory(exports)
+    else {
+        const mod = {
+            exports: {}
+        }
         root = root || self || window // eslint-disable-line no-undef
-        window.xdispatcher = factory(/** dep */) // eslint-disable-line no-undef
+        factory(mod.exports)
+        root.xdispatcher = mod.exports['xdispatcher'] // eslint-disable-line no-undef
     }
-}(this, function (dep) {
+    
+}(void 0, function (exports) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    })
     // myModule data goes here
+    exports.xdispatcher = xdispatcher
     return xdispatcher
 }))

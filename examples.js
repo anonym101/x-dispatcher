@@ -12,6 +12,7 @@ function exampleOne() {
     const uid = `dispatch_job_1`
     const DEBUG = true
     const { xdispatcher } = require('./umd')
+  
     const ds = xdispatcher(uid, DEBUG)
 
     // thanks to callback memory `next` can be called before being subscribed!

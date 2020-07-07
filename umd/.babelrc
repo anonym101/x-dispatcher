@@ -27,17 +27,17 @@
         [
             "@babel/plugin-transform-runtime",
             {
-                "absoluteRuntime": false,
-                "corejs": 2,
-                "helpers": true,
-                "regenerator": true,
+                // "absoluteRuntime": false,
+                // "corejs": 2,
+                // "helpers": true,
+                // "regenerator": true,
                 "useESModules": true
             }
         ],
         [
             "transform-es2015-modules-commonjs",
             {
-                // "allowTopLevelThis": true
+                "allowTopLevelThis": true
             }
         ]
     ]
