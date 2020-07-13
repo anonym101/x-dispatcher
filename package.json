@@ -1,6 +1,6 @@
 {
   "name": "x-dispatcher",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "JavaScript event dispatcher",
   "main": "node/index.js",
   "module": "esm/index.js",
