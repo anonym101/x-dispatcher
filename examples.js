@@ -1,11 +1,17 @@
 `use strict`
 
 
+
 /**
  * x-dispatcher 
  * - three examples showcase
  * - just uncomment the example you want to see
  */
+
+// umd/esm example
+// import {xdispatcher} from './umd'
+// import {xdispatcher} from './esm'
+// console.log('xdispatcher',xdispatcher())
 
 exampleOne()
 function exampleOne() {

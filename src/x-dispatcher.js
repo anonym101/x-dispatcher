@@ -202,7 +202,7 @@ function xdispatcher(_uid, _debug = null) {
         root.xdispatcher = mod.exports['xdispatcher'] // eslint-disable-line no-undef
     }
     
-}(void 0, function (exports) {
+}(this, function (exports) {
     Object.defineProperty(exports, "__esModule", {
         value: true
     })

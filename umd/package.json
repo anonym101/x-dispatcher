@@ -1,0 +1,9 @@
+{
+    "name": "x-dispatcher",
+    "main": "index.js",
+    "type": "commonjs",
+    "esm": {
+      "mode": "auto"
+    }
+  }
+  

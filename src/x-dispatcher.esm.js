@@ -9,7 +9,7 @@
  */
 
 // esModule
-export function xdispatcher(_uid, _debug = null) {
+export const xdispatcher = (_uid, _debug = null) => {
     return (new function (uid, debug) {
         const plugin = `[dispatcher]`
         this.uid = ((uid || '').toString() || new Date().getTime()).toString() // id generated if not provided
