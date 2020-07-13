@@ -13,3 +13,4 @@ Dockerfile
 libs
 docker-compose.yml
 .vscode
+!.npmignore
