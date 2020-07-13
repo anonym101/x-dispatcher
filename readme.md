@@ -47,9 +47,11 @@
           .next({ data: { company: "another Secret delayed" } }) // and so on
           .unsubscribe()
           .next({ data: { company: "never received" } }) // never called
+
+          console.log(ds.isActive()) //:false
     }, 2000)
 
-    console.log(ds.isActive()) //:false
+  
 ```
 
 
